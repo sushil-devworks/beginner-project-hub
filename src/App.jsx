@@ -1,11 +1,13 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import Calc from './components/Calc';
 import TodoApp from './components/TodoApp';
+import NotesTaker from './components/NotesTaker';
 
 function Home() {
   const paths = [
     { id: 'calc', name: 'Calculator', path: '/calc' },
     { id: 'todos', name: 'Todo App', path: '/todos' },
+    { id: 'notes', name: 'Notes Taker', path: '/notes' },
   ];
 
   return (
@@ -43,6 +45,7 @@ const App = () => {
       <Route path='/' element={<Home />} />
       <Route path='/calc' element={<Calc />} />
       <Route path='/todos' element={<TodoApp />} />
+      <Route path='/notes' element={<NotesTaker />} />
     </Routes>
   );
 };
