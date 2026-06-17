@@ -198,7 +198,7 @@ const Calc = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
       <div
-        data-aos="zoom-in-down"
+        data-aos="flip-left"
         data-aos-delay={100}
         className="w-full max-w-sm p-8 rounded-[40px] bg-slate-900/90 backdrop-blur-3xl border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
       >
