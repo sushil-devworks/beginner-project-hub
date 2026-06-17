@@ -1,13 +1,18 @@
 import { Link, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Calc from './components/Calc';
 import TodoApp from './components/TodoApp';
 import NotesTaker from './components/NotesTaker';
+import Weather from './components/Weather';
 
 function Home() {
   const paths = [
     { id: 'calc', name: 'Calculator', path: '/calc' },
     { id: 'todos', name: 'Todo App', path: '/todos' },
     { id: 'notes', name: 'Notes Taker', path: '/notes' },
+    {id: 'weather', name: 'Weather Tracker', path: 'weather'},
   ];
 
   return (
@@ -20,10 +25,12 @@ function Home() {
         </div>
 
         <div className='grid gap-6 md:grid-cols-2'>
-          {paths.map(({ id, name, path }) => (
+          {paths.map(({ id, name, path }, idx) => (
             <Link
               key={id}
               to={path}
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
               className='group rounded-3xl border border-white/15 bg-white/5 p-6 transition duration-300 hover:bg-white/10 hover:shadow-[0_20px_80px_rgba(15,23,42,0.35)]'
             >
               <div className='space-y-3'>
@@ -40,12 +47,16 @@ function Home() {
 };
 
 const App = () => {
+  useEffect(() => {
+    AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+  }, []);
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/calc' element={<Calc />} />
       <Route path='/todos' element={<TodoApp />} />
       <Route path='/notes' element={<NotesTaker />} />
+      <Route path='/weather' element={<Weather />} />
     </Routes>
   );
 };
