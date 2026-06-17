@@ -174,7 +174,7 @@ const Calc = () => {
     className = "",
   }) => {
     const baseClasses =
-      "w-full py-4 rounded-3xl font-semibold text-lg transition-all duration-200 transform-gpu active:-translate-y-0.5 active:scale-[0.98] shadow-[0_18px_60px_rgba(0,0,0,0.22)]";
+      "w-full py-3 sm:py-4 rounded-3xl font-semibold text-base sm:text-lg transition-all duration-200 transform-gpu active:-translate-y-0.5 active:scale-[0.98] shadow-[0_18px_60px_rgba(0,0,0,0.22)]";
     const variants = {
       default:
         "bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 text-white shadow-[inset_0_2px_0_rgba(255,255,255,0.08)] hover:from-slate-600 hover:to-slate-800 active:shadow-[inset_0_4px_0_rgba(0,0,0,0.28)]",
@@ -196,22 +196,22 @@ const Calc = () => {
     );
   };
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
       <div
         data-aos="flip-left"
         data-aos-delay={100}
-        className="w-full max-w-sm p-8 rounded-[40px] bg-slate-900/90 backdrop-blur-3xl border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
+        className="w-full max-w-sm sm:max-w-md md:max-w-lg p-6 sm:p-8 rounded-[40px] bg-slate-900/90 backdrop-blur-3xl border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
       >
-        <div className="mb-8 p-6 rounded-[34px] bg-slate-950/85 border border-white/10 shadow-[inset_0_10px_30px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.4)]">
+        <div className="mb-6 sm:mb-8 p-4 sm:p-6 rounded-[34px] bg-slate-950/85 border border-white/10 shadow-[inset_0_10px_30px_rgba(255,255,255,0.05),_0_20px_40px_rgba(0,0,0,0.4)]">
           <input
             type="text"
             value={display}
             readOnly
-            className="w-full bg-transparent text-right text-5xl font-bold text-white outline-none overflow-hidden caret-transparent select-none"
+            className="w-full bg-transparent text-right text-4xl sm:text-5xl font-bold text-white outline-none overflow-hidden caret-transparent select-none"
           />
         </div>
 
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-4 gap-2 sm:gap-3">
           <Button onClick={handleClear} variant="clear">
             AC
           </Button>
